@@ -8,7 +8,7 @@
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8">
-    <title>API - Documentation</title>
+    <title>API - Documentação</title>
     <meta name="description" content="">
     <meta name="author" content="ticlekiwi">
 
@@ -30,7 +30,7 @@
     <div class="content-logo">
         <div class="logo">
             <img alt="platform by Emily van den Heever from the Noun Project" title="platform by Emily van den Heever from the Noun Project" src="images/logo.png" height="32" />
-            <span>API Documentation</span>
+            <span>API Documentação</span>
         </div>
         <button class="burger-menu-icon" id="button-menu-mobile">
             <svg width="34" height="34" viewBox="0 0 100 100"><path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"></path><path class="line line2" d="M 20,50 H 80"></path><path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"></path></svg>
@@ -39,18 +39,15 @@
     <div class="mobile-menu-closer"></div>
     <div class="content-menu">
         <div class="content-infos">
-            <div class="info"><b>Version:</b> 1.0.5</div>
-            <div class="info"><b>Last Updated:</b> 15th Sep, 2021</div>
+            <div class="info"><b>Versão:</b> 1.0.0</div>
+            <div class="info"><b>Ultima Atualização:</b> 31/10/2023</div>
         </div>
         <ul>
             <li class="scroll-to-link active" data-target="content-get-started">
-                <a>GET STARTED</a>
+                <a>Iniciar</a>
             </li>
             <li class="scroll-to-link" data-target="content-get-characters">
-                <a>Get Characters</a>
-            </li>
-            <li class="scroll-to-link" data-target="content-errors">
-                <a>Errors</a>
+                <a>Clientes</a>
             </li>
         </ul>
     </div>
@@ -59,197 +56,119 @@
     <div class="content-code"></div>
     <div class="content">
         <div class="overflow-hidden content-section" id="content-get-started">
-            <h1>Get started</h1>
+            <h1>Iniciar</h1>
             <pre>
     API Endpoint
 
-        https://api.westeros.com/
+        https://solicitarurl.com/
                 </pre>
             <p>
-                The Westeros API provides programmatic access to read Game of Thrones data. Retrieve a character, provide an oauth connexion, retrieve a familly, filter them, etc.
+                As API's fornecem a troca de informações entre sistemas.
             </p>
-            <p>
-                To use this API, you need an <strong>API key</strong>. Please contact us at <a href="mailto:jon.snow@nightswatch.wes">jon.snow@nightswatch.wes</a> to get your own API key.
-            </p>
+        
         </div>
         <div class="overflow-hidden content-section" id="content-get-characters">
-            <h2>get characters</h2>
+            <h2>Consulta Clientes</h2>
             <pre><code class="bash">
-# Here is a curl example
+# Exemplo curl
 curl \
--X POST http://api.westeros.com/character/get \
--F 'secret_key=your_api_key' \
--F 'house=Stark,Bolton' \
--F 'offset=0' \
--F 'limit=50'
+-X POST http://solicitarurl.com/rest/MrClientes \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Basic xxx' \
+--data '[   
+    {   
+        "nome":"teste 123",
+        "tipopessoa":"F",
+        "endereco":"rua teste",
+        "tipo":"F",
+        "estado":"SP",
+        "municipio":"SAO PAULO",
+        "cnpj_cpf":"00000000000000"
+    }
+]'
                 </code></pre>
-            <p>
-                To get characters you need to make a POST call to the following url :<br>
-                <code class="higlighted break-word">http://api.westeros.com/character/get</code>
-            </p>
-            <br>
             <pre><code class="json">
-Result example :
+Exemplo retorno:
 
-{
-  query:{
-    offset: 0,
-    limit: 50,
-    house: [
-      "Stark",
-      "Bolton"
-    ],
-  }
-  result: [
-    {
-      id: 1,
-      first_name: "Jon",
-      last_name: "Snow",
-      alive: true,
-      house: "Stark",
-      gender: "m",
-      age: 14,
-      location: "Winterfell"
-    },
-    {
-      id: 2,
-      first_name: "Eddard",
-      last_name: "Stark",
-      alive: false,
-      house: "Stark",
-      gender: "m",
-      age: 35,
-      location: 'Winterfell'
-    },
-    {
-      id: 3,
-      first_name: "Catelyn",
-      last_name: "Stark",
-      alive: false,
-      house: "Stark",
-      gender: "f",
-      age: 33,
-      location: "Winterfell"
-    },
-    {
-      id: 4,
-      first_name: "Roose",
-      last_name: "Bolton",
-      alive: false,
-      house: "Bolton",
-      gender: "m",
-      age: 40,
-      location: "Dreadfort"
-    },
-    {
-      id: 5,
-      first_name: "Ramsay",
-      last_name: "Snow",
-      alive: false,
-      house: "Bolton",
-      gender: "m",
-      age: 15,
-      location: "Dreadfort"
-    },
-  ]
-}
+Com sucesso:
+
+[
+	{
+		"status": true,
+		"mensagem": "00000000000000",
+		"codigo":"0029",
+		"loja":"01"
+	}
+]
+
+
+Sem sucesso:
+
+[
+	{
+		"status": false,
+		"mensagem": "campos obrigatorios - estado/municipio/",
+		"codigo":"",
+		"loja":""
+	}
+]
+
                 </code></pre>
-            <h4>QUERY PARAMETERS</h4>
+            <h4>BODY PARAMETERS</h4>
             <table class="central-overflow-x">
                 <thead>
                 <tr>
-                    <th>Field</th>
-                    <th>Type</th>
-                    <th>Description</th>
+                    <th>Campo</th>
+                    <th>Tipo</th>
+                    <th>Descrição</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td>secret_key</td>
-                    <td>String</td>
-                    <td>Your API key.</td>
+                    <td>nome</td>
+                    <td>String (max 40)</td>
+                    <td>alfanumérico e não pode conter caracteres especiais</td>
                 </tr>
                 <tr>
-                    <td>search</td>
-                    <td>String</td>
-                    <td>(optional) A search word to find character by name.</td>
+                    <td>tipopessoa</td>
+                    <td>String (max 1)</td>
+                    <td>F: Fisica<br>
+                    J: Juridica</td>
                 </tr>
                 <tr>
-                    <td>house</td>
-                    <td>String</td>
-                    <td>
-                        (optional) a string array of houses:
+                    <td>endereco</td>
+                    <td>String (max 80)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>tipo</td>
+                    <td>String (max 1)</td>
+                    <td>F: Cons.Final<br>
+                    L: Produtor Rural<br>
+                    R: Revendedor<br>
+                    S: Solidario<br>
+                    X: Exportacao<br>
                     </td>
                 </tr>
                 <tr>
-                    <td>alive</td>
-                    <td>Boolean</td>
-                    <td>
-                        (optional) a boolean to filter alived characters
-                    </td>
+                    <td>estado</td>
+                    <td>String (max 2)</td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <td>gender</td>
-                    <td>String</td>
-                    <td>
-                        (optional) a string to filter character by gender:<br>
-                        m: male<br>
-                        f: female
-                    </td>
+                    <td>municipio</td>
+                    <td>String (max 60)</td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <td>offset</td>
-                    <td>Integer</td>
-                    <td>(optional - default: 0) A cursor for use in pagination. Pagination starts offset the specified offset.</td>
-                </tr>
-                <tr>
-                    <td>limit</td>
-                    <td>Integer</td>
-                    <td>(optional - default: 10) A limit on the number of objects to be returned, between 1 and 100.</td>
+                    <td>cnpj_cpf</td>
+                    <td>String (max 14)</td>
+                    <td></td>
                 </tr>
                 </tbody>
             </table>
         </div>
-        <div class="overflow-hidden content-section" id="content-errors">
-            <h2>Errors</h2>
-            <p>
-                The Westeros API uses the following error codes:
-            </p>
-            <table>
-                <thead>
-                <tr>
-                    <th>Error Code</th>
-                    <th>Meaning</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>X000</td>
-                    <td>
-                        Some parameters are missing. This error appears when you don't pass every mandatory parameters.
-                    </td>
-                </tr>
-                <tr>
-                    <td>X001</td>
-                    <td>
-                        Unknown or unvalid <code class="higlighted">secret_key</code>. This error appears if you use an unknow API key or if your API key expired.
-                    </td>
-                </tr>
-                <tr>
-                    <td>X002</td>
-                    <td>
-                        Unvalid <code class="higlighted">secret_key</code> for this domain. This error appears if you use an  API key non specified for your domain. Developper or Universal API keys doesn't have domain checker.
-                    </td>
-                </tr>
-                <tr>
-                    <td>X003</td>
-                    <td>
-                        Unknown or unvalid user <code class="higlighted">token</code>. This error appears if you use an unknow user <code class="higlighted">token</code> or if the user <code class="higlighted">token</code> expired.
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
+      
     </div>
     <div class="content-code"></div>
 </div>
