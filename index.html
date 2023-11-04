@@ -39,15 +39,18 @@
     <div class="mobile-menu-closer"></div>
     <div class="content-menu">
         <div class="content-infos">
-            <div class="info"><b>Versão:</b> 1.0.0</div>
-            <div class="info"><b>Ultima Atualização:</b> 31/10/2023</div>
+            <div class="info"><b>Versão:</b> 1.0.1</div>
+            <div class="info"><b>Ultima Atualização:</b> 04/11/2023</div>
         </div>
         <ul>
             <li class="scroll-to-link active" data-target="content-get-started">
                 <a>Iniciar</a>
             </li>
-            <li class="scroll-to-link" data-target="content-get-characters">
-                <a>Clientes</a>
+            <li class="scroll-to-link" data-target="content-get-clientes">
+                <a>Consultar Clientes</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-post-clientes">
+                <a>Incluir Clientes</a>
             </li>
         </ul>
     </div>
@@ -67,8 +70,69 @@
             </p>
         
         </div>
-        <div class="overflow-hidden content-section" id="content-get-characters">
-            <h2>Consulta Clientes</h2>
+        <div class="overflow-hidden content-section" id="content-get-clientes">
+            <h2>Consultar Clientes</h2>
+            <pre><code class="bash">
+# Exemplo curl \
+-X GET http://solicitarurl.com/rest/MrClientes \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Basic xxx' \
+--data '[   
+            {   
+                "cnpj_cpf":"44281038000155"
+            }
+        ]'
+        	</code></pre>
+            <pre><code class="json">
+Exemplo retorno:
+
+Com sucesso:
+
+[
+    {
+        "status": true,
+        "mensagem": "44281038000155",
+        "codigo": "0029  ",
+        "loja": "01"
+    }
+]
+
+
+Sem sucesso:
+
+[
+    {
+        "status": false,
+        "mensagem": "campos obrigatorios - cnpj_cpf/s",
+        "codigo":"",
+        "loja":""
+    }
+]
+
+                </code></pre>
+            <h4>BODY PARAMETERS</h4>
+            <table class="central-overflow-x">
+                <thead>
+                <tr>
+                    <th>Campo</th>
+                    <th>Tipo</th>
+                    <th>Descrição</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>cnpj_cpf</td>
+                    <td>String (max 14)</td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+      
+
+                
+        <div class="overflow-hidden content-section" id="content-post-clientes">
+            <h2>Incluir Clientes</h2>
             <pre><code class="bash">
 # Exemplo curl
 curl \
@@ -93,24 +157,24 @@ Exemplo retorno:
 Com sucesso:
 
 [
-	{
-		"status": true,
-		"mensagem": "00000000000000",
-		"codigo":"0029",
-		"loja":"01"
-	}
+    {
+        "status": true,
+        "mensagem": "00000000000000",
+        "codigo":"0029",
+        "loja":"01"
+    }
 ]
 
 
 Sem sucesso:
 
 [
-	{
-		"status": false,
-		"mensagem": "campos obrigatorios - estado/municipio/",
-		"codigo":"",
-		"loja":""
-	}
+    {
+        "status": false,
+        "mensagem": "campos obrigatorios - estado/municipio/",
+        "codigo":"",
+        "loja":""
+    }
 ]
 
                 </code></pre>
