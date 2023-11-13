@@ -39,8 +39,8 @@
     <div class="mobile-menu-closer"></div>
     <div class="content-menu">
         <div class="content-infos">
-            <div class="info"><b>Versão:</b> 1.0.1</div>
-            <div class="info"><b>Ultima Atualização:</b> 04/11/2023</div>
+            <div class="info"><b>Versão:</b> 1.0.2</div>
+            <div class="info"><b>Ultima Atualização:</b> 12/11/2023</div>
         </div>
         <ul>
             <li class="scroll-to-link active" data-target="content-get-started">
@@ -51,6 +51,9 @@
             </li>
             <li class="scroll-to-link" data-target="content-post-clientes">
                 <a>Incluir Clientes</a>
+            </li>
+			<li class="scroll-to-link" data-target="content-post-titulopr">
+                <a>Gerar Título / Boleto</a>
             </li>
         </ul>
     </div>
@@ -233,6 +236,94 @@ Sem sucesso:
             </table>
         </div>
       
+    
+   <div class="overflow-hidden content-section" id="content-post-titulopr">
+            <h2>Gerar Título / Boleto</h2>
+            <pre><code class="bash">
+# Exemplo curl
+curl \
+-X POST http://solicitarurl.com/rest/MrTitPR \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Basic xxx' \
+--data '[   
+    {   
+        "filial":"0102",
+        "codigo":"000001",
+        "loja":"01",
+        "valor":100
+    }
+]'
+                </code></pre>
+            <pre><code class="json">
+Exemplo retorno:
+
+Com sucesso:
+
+[
+    {
+        "status": true,
+        "mensagem": "gerado com sucesso.",
+        "filial": "0102",
+        "codigo": "000001",
+        "loja": "01",
+        "valor": 100,
+        "numero": "000000008",
+        "prefixo": "LEC"
+    }
+]
+
+
+Sem sucesso:
+
+[
+    {
+        "status": false,
+        "mensagem": "campos obrigatorios - valor/",
+        "filial": "",
+        "codigo": "",
+        "loja": "",
+        "valor": 0,
+        "numero": "",
+        "prefixo": ""
+    }
+]
+
+                </code></pre>
+            <h4>BODY PARAMETERS</h4>
+            <table class="central-overflow-x">
+                <thead>
+                <tr>
+                    <th>Campo</th>
+                    <th>Tipo</th>
+                    <th>Descrição</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>filial</td>
+                    <td>String (max 4)</td>
+                    <td>codigo da filial de geração do título</td>
+                </tr>
+                <tr>
+                    <td>codigo</td>
+                    <td>String (max 6)</td>
+                    <td>codigo do cliente</td>
+                </tr>
+                <tr>
+                    <td>loja</td>
+                    <td>String (max 2)</td>
+                    <td>loja do cliente</td>
+                </tr>
+                <tr>
+                    <td>valor</td>
+                    <td>Decimal (max 16,2)</td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+      
+    </div>
     </div>
     <div class="content-code"></div>
 </div>
