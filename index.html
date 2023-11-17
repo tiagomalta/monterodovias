@@ -39,8 +39,8 @@
     <div class="mobile-menu-closer"></div>
     <div class="content-menu">
         <div class="content-infos">
-            <div class="info"><b>Versão:</b> 1.0.3</div>
-            <div class="info"><b>Ultima Atualização:</b> 16/11/2023</div>
+            <div class="info"><b>Versão:</b> 1.0.4</div>
+            <div class="info"><b>Ultima Atualização:</b> 17/11/2023</div>
         </div>
         <ul>
             <li class="scroll-to-link active" data-target="content-get-started">
@@ -271,11 +271,15 @@ curl \
 --header 'Authorization: Basic xxx' \
 --data '[   
     {   
-        "filial":"0102",
+        "filial":"0101",
         "codigo":"000001",
         "loja":"01",
         "valor":100,
-        "vencimento":"20/11/2023"
+        "vencimento":"20/11/2023",
+        "natureza":"000000000",
+        "banco":"000",
+        "agencia":"0000",
+        "conta":"000000"
     }
 ]'
                 </code></pre>
@@ -288,7 +292,7 @@ Com sucesso:
     {
         "status": true,
         "mensagem": "gerado com sucesso.",
-        "filial": "0102",
+        "filial": "0101",
         "codigo": "000001",
         "loja": "01",
         "valor": 100,
@@ -348,6 +352,26 @@ Sem sucesso:
                 </tr>
                 <tr>
                     <td>vencimento</td>
+                    <td>String (max 10)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>natureza</td>
+                    <td>String (max 10)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>banco</td>
+                    <td>String (max 3)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>agencia</td>
+                    <td>String (max 5)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>conta</td>
                     <td>String (max 10)</td>
                     <td></td>
                 </tr>
