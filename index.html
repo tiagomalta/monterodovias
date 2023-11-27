@@ -39,8 +39,8 @@
     <div class="mobile-menu-closer"></div>
     <div class="content-menu">
         <div class="content-infos">
-            <div class="info"><b>Versão:</b> 1.0.4</div>
-            <div class="info"><b>Ultima Atualização:</b> 17/11/2023</div>
+            <div class="info"><b>Versão:</b> 1.0.5</div>
+            <div class="info"><b>Ultima Atualização:</b> 27/11/2023</div>
         </div>
         <ul>
             <li class="scroll-to-link active" data-target="content-get-started">
@@ -81,10 +81,10 @@
 --header 'Content-Type: application/json' \
 --header 'Authorization: Basic xxx' \
 --data '[   
-            {   
-                "cnpj_cpf":"44281038000155"
-            }
-        ]'
+    {   
+        "cnpj_cpf":"00000000000000"
+    }
+]'
         	</code></pre>
             <pre><code class="json">
 Exemplo retorno:
@@ -94,15 +94,30 @@ Com sucesso:
 [
     {
         "status": true,
-        "mensagem": "44281038000155",
-        "codigo": "0029  ",
+        "mensagem": "00000000000000",
+        "codigo": "101138",
         "loja": "01",
-        "nome": "DIADEMA AGRO IND. LTDA",
-        "tipopessoa": "J",
-        "endereco": "ESTRADA ARY DOMINGUES MANDU, 1399",
+        "nome": "TESTE 123                               ",
+        "tipopessoa": "F",
+        "endereco": "RUA TESTE                                                                       ",
         "tipo": "F",
         "estado": "SP",
-        "municipio": "ITAPECERICA DA SERRA"
+        "municipio": "SAO PAULO                                                   ",
+        "nomefan": "TESTE               ",
+        "bairro": "SANTANA                                 ",
+        "cep": "02402003",
+        "codmun": "50308",
+        "endcob": "RUA TESTE                               ",
+        "ddd": "11 ",
+        "tel": "997766554      ",
+        "endent": "RUA TESTE                               ",
+        "contato": "TESTE          ",
+        "inscr": "ISENTO            ",
+        "pais": "105",
+        "inscrm": "ISENTO            ",
+        "conta": "00000000000000000001",
+        "codpais": "01058",
+        "cnae": "9601-7/01"
     }
 ]
 
@@ -113,14 +128,29 @@ Sem sucesso:
     {
         "status": false,
         "mensagem": "campos obrigatorios - cnpj_cpf/s",
-        "codigo":"",
-        "loja":"",
+        "codigo": "",
+        "loja": "",
         "nome": "",
         "tipopessoa": "",
         "endereco": "",
         "tipo": "",
         "estado": "",
-        "municipio": ""
+        "municipio": "",
+        "nomefan": "",
+        "bairro": "",
+        "cep": "",
+        "codmun": "",
+        "endcob": "",
+        "ddd": "",
+        "tel": "",
+        "endent": "",
+        "contato": "",
+        "inscr": "",
+        "pais": "",
+        "inscrm": "",
+        "conta": "",
+        "codpais": "",
+        "cnae": ""
     }
 ]
 
@@ -156,13 +186,28 @@ curl \
 --header 'Authorization: Basic xxx' \
 --data '[   
     {   
-        "nome":"teste 123",
+        "nome":"TESTE 123",
+        "nomefan":"TESTE",
         "tipopessoa":"F",
-        "endereco":"rua teste",
+        "endereco":"RUA TESTE",
+        "bairro":"SANTANA",
+        "cep":"02402003",
+        "codmun":"50308",
+        "endcob":"RUA TESTE",
+        "ddd":"11",
+        "tel":"997766554",
+        "endent":"RUA TESTE",
         "tipo":"F",
         "estado":"SP",
         "municipio":"SAO PAULO",
-        "cnpj_cpf":"00000000000000"
+        "cnpj_cpf":"00000000000000",
+        "contato":"TESTE",
+        "inscr":"ISENTO",
+        "pais":"105",
+        "inscrm":"ISENTO",
+        "conta":"00000000000000000001",
+        "codpais":"01058",
+        "cnae":"9601-7/01"
     }
 ]'
                 </code></pre>
@@ -175,14 +220,29 @@ Com sucesso:
     {
         "status": true,
         "mensagem": "00000000000000",
-        "codigo":"0029",
-        "loja":"01",
-        "nome": "DIADEMA AGRO IND. LTDA",
-        "tipopessoa": "J",
-        "endereco": "ESTRADA ARY DOMINGUES MANDU, 1399",
+        "codigo": "101138",
+        "loja": "01",
+        "nome": "TESTE 123                               ",
+        "tipopessoa": "F",
+        "endereco": "RUA TESTE                                                                       ",
         "tipo": "F",
         "estado": "SP",
-        "municipio": "ITAPECERICA DA SERRA"
+        "municipio": "SAO PAULO                                                   ",
+        "nomefan": "TESTE               ",
+        "bairro": "SANTANA                                 ",
+        "cep": "02402003",
+        "codmun": "50308",
+        "endcob": "RUA TESTE                               ",
+        "ddd": "11 ",
+        "tel": "997766554      ",
+        "endent": "RUA TESTE                               ",
+        "contato": "TESTE          ",
+        "inscr": "ISENTO            ",
+        "pais": "105",
+        "inscrm": "ISENTO            ",
+        "conta": "00000000000000000001",
+        "codpais": "01058",
+        "cnae": "9601-7/01"
     }
 ]
 
@@ -193,14 +253,29 @@ Sem sucesso:
     {
         "status": false,
         "mensagem": "campos obrigatorios - estado/municipio/",
-        "codigo":"",
-        "loja":"",
+        "codigo": "",
+        "loja": "",
         "nome": "",
         "tipopessoa": "",
         "endereco": "",
         "tipo": "",
         "estado": "",
-        "municipio": ""
+        "municipio": "",
+        "nomefan": "",
+        "bairro": "",
+        "cep": "",
+        "codmun": "",
+        "endcob": "",
+        "ddd": "",
+        "tel": "",
+        "endent": "",
+        "contato": "",
+        "inscr": "",
+        "pais": "",
+        "inscrm": "",
+        "conta": "",
+        "codpais": "",
+        "cnae": ""
     }
 ]
 
@@ -254,6 +329,81 @@ Sem sucesso:
                 <tr>
                     <td>cnpj_cpf</td>
                     <td>String (max 14)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>nomefan</td>
+                    <td>String (max 20)</td>
+                    <td>Nome Fantasia</td>
+                </tr>
+                <tr>
+                    <td>bairro</td>
+                    <td>String (max 40)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>cep</td>
+                    <td>String (max 8)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>codmun</td>
+                    <td>String (max 5)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>endcob</td>
+                    <td>String (max 40)</td>
+                    <td>Endereço de cobrança</td>
+                </tr>
+                <tr>
+                    <td>ddd</td>
+                    <td>String (max 3)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>tel</td>
+                    <td>String (max 15)</td>
+                    <td>Telefone</td>
+                </tr>
+                <tr>
+                    <td>endent</td>
+                    <td>String (max 40)</td>
+                    <td>Endereço de entrega</td>
+                </tr>
+                <tr>
+                    <td>contato</td>
+                    <td>String (max 15)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>inscr</td>
+                    <td>String (max 18)</td>
+                    <td>Inscricao Estadual</td>
+                </tr>
+                <tr>
+                    <td>pais</td>
+                    <td>String (max 3)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>inscrm</td>
+                    <td>String (max 18)</td>
+                    <td>Inscricao Municipal</td>
+                </tr>
+                <tr>
+                    <td>conta</td>
+                    <td>String (max 20)</td>
+                    <td>Conta Contabil</td>
+                </tr>
+                <tr>
+                    <td>codpais</td>
+                    <td>String (max 5)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>cnae</td>
+                    <td>String (max 9)</td>
                     <td></td>
                 </tr>
                 </tbody>
