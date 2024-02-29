@@ -39,8 +39,8 @@
     <div class="mobile-menu-closer"></div>
     <div class="content-menu">
         <div class="content-infos">
-            <div class="info"><b>Versão:</b> 1.0.7</div>
-            <div class="info"><b>Ultima Atualização:</b> 16/01/2024</div>
+            <div class="info"><b>Versão:</b> 1.0.8</div>
+            <div class="info"><b>Ultima Atualização:</b> 29/02/2024</div>
         </div>
         <ul>
             <li class="scroll-to-link active" data-target="content-get-started">
@@ -97,24 +97,24 @@ Com sucesso:
         "mensagem": "00000000000000",
         "codigo": "101138",
         "loja": "01",
-        "nome": "TESTE 123                               ",
+        "nome": "TESTE 123",
         "tipopessoa": "F",
-        "endereco": "RUA TESTE                                                                       ",
+        "endereco": "RUA TESTE",
         "tipo": "F",
         "estado": "SP",
-        "municipio": "SAO PAULO                                                   ",
-        "nomefan": "TESTE               ",
-        "bairro": "SANTANA                                 ",
+        "municipio": "SAO PAULO",
+        "nomefan": "TESTE",
+        "bairro": "SANTANA",
         "cep": "02402003",
         "codmun": "50308",
-        "endcob": "RUA TESTE                               ",
+        "endcob": "RUA TESTE",
         "ddd": "11 ",
-        "tel": "997766554      ",
-        "endent": "RUA TESTE                               ",
-        "contato": "TESTE          ",
-        "inscr": "ISENTO            ",
+        "tel": "997766554",
+        "endent": "RUA TESTE",
+        "contato": "TESTE",
+        "inscr": "ISENTO",
         "pais": "105",
-        "inscrm": "ISENTO            ",
+        "inscrm": "ISENTO",
         "conta": "00000000000000000001",
         "codpais": "01058",
         "cnae": "9601-7/01"
@@ -222,24 +222,24 @@ Com sucesso:
         "mensagem": "00000000000000",
         "codigo": "101138",
         "loja": "01",
-        "nome": "TESTE 123                               ",
+        "nome": "TESTE 123",
         "tipopessoa": "F",
-        "endereco": "RUA TESTE                                                                       ",
+        "endereco": "RUA TESTE",
         "tipo": "F",
         "estado": "SP",
-        "municipio": "SAO PAULO                                                   ",
-        "nomefan": "TESTE               ",
-        "bairro": "SANTANA                                 ",
+        "municipio": "SAO PAULO",
+        "nomefan": "TESTE",
+        "bairro": "SANTANA",
         "cep": "02402003",
         "codmun": "50308",
-        "endcob": "RUA TESTE                               ",
+        "endcob": "RUA TESTE",
         "ddd": "11 ",
-        "tel": "997766554      ",
-        "endent": "RUA TESTE                               ",
-        "contato": "TESTE          ",
-        "inscr": "ISENTO            ",
+        "tel": "997766554",
+        "endent": "RUA TESTE",
+        "contato": "TESTE",
+        "inscr": "ISENTO",
         "pais": "105",
-        "inscrm": "ISENTO            ",
+        "inscrm": "ISENTO",
         "conta": "00000000000000000001",
         "codpais": "01058",
         "cnae": "9601-7/01"
@@ -430,6 +430,7 @@ curl \
         "banco":"000",
         "agencia":"0000",
         "conta":"000000",
+        "subconta":"003",
         "processo":"FXDACP0000000841"
     }
 ]'
@@ -524,6 +525,11 @@ Sem sucesso:
                 <tr>
                     <td>conta</td>
                     <td>String (max 10)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>subconta</td>
+                    <td>String (max 3)</td>
                     <td></td>
                 </tr>
                 <tr>
