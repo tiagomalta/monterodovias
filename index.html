@@ -55,6 +55,9 @@
 			<li class="scroll-to-link" data-target="content-post-titulopr">
                 <a>Gerar Título / Boleto</a>
             </li>
+			<li class="scroll-to-link" data-target="content-post-tituloprat">
+                <a>Título / Boleto Rateio</a>
+            </li>
         </ul>
     </div>
 </div>
@@ -540,7 +543,201 @@ Sem sucesso:
                 </tbody>
             </table>
         </div>
-      
+<div class="overflow-hidden content-section" id="content-post-tituloprat">
+            <h2>Gerar Título / Boleto</h2>
+            <pre><code class="bash">
+# Exemplo curl
+curl \
+-X POST http://solicitarurl.com/rest/MratTitPR \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Basic xxx' \
+--data 
+                </code></pre>
+            <pre><code class="json">
+[
+	{
+		"filial": "0101",
+		"codigo": "000001",
+		"loja": "01",
+		"valor": 100,
+		"vencimento": "30/11/2024",
+		"natureza": "000000000",
+		"banco": "000",
+		"agencia": "0000",
+		"conta": "000000",
+		"subconta": "003",
+		"processo": "FXDACP0000000841",
+		"rateio": [
+			{
+				"filial": "0101",
+				"cliente": "000001",
+				"loja": "01",
+				"produto": "RA000004",
+				"valor": 60,
+				"codmunori": "27408",
+				"codmundes": "07208",
+				"ufori": "BA",
+				"ufdes": "PE",
+				"natureza": "000000000",
+				"msgpedido": "TESTE1"
+			},
+			{
+				"filial": "0101",
+				"cliente": "000002",
+				"loja": "02",
+				"produto": "RA000004",
+				"valor": 40,
+				"codmunori": "27408",
+				"codmundes": "07208",
+				"ufori": "BA",
+				"ufdes": "PE",
+				"natureza": "000000000",
+				"msgpedido": "TESTE2"
+			}
+		]
+	}
+]
+
+
+Exemplo retorno:
+
+Com sucesso:
+
+[
+    {
+        "status": true,
+        "mensagem": "gerado com sucesso.",
+        "filial": "0101",
+        "codigo": "000001",
+        "loja": "01",
+        "valor": 100,
+        "numero": "000000008",
+        "prefixo": "LEC",
+        "boleto": "XXXXXXXXXXXXXX"
+    }
+]
+
+
+Sem sucesso:
+
+[
+    {
+        "status": false,
+        "mensagem": "campos obrigatorios - valor/",
+        "filial": "",
+        "codigo": "",
+        "loja": "",
+        "valor": 0,
+        "numero": "",
+        "prefixo": "",
+        "boleto": ""
+    }
+]
+
+                </code></pre>
+            <h4>BODY PARAMETERS</h4>
+            <table class="central-overflow-x">
+                <thead>
+                <tr>
+                    <th>Campo</th>
+                    <th>Tipo</th>
+                    <th>Descrição</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>filial</td>
+                    <td>String (max 4)</td>
+                    <td>codigo da filial de geração do título</td>
+                </tr>
+                <tr>
+                    <td>codigo</td>
+                    <td>String (max 6)</td>
+                    <td>codigo do cliente</td>
+                </tr>
+                <tr>
+                    <td>loja</td>
+                    <td>String (max 2)</td>
+                    <td>loja do cliente</td>
+                </tr>
+                <tr>
+                    <td>valor</td>
+                    <td>Decimal (max 16,2)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>vencimento</td>
+                    <td>String (max 10)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>natureza</td>
+                    <td>String (max 10)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>banco</td>
+                    <td>String (max 3)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>agencia</td>
+                    <td>String (max 5)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>conta</td>
+                    <td>String (max 10)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>subconta</td>
+                    <td>String (max 3)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>processo</td>
+                    <td>String (max 25)</td>
+                    <td></td>
+                </tr>
+				<tr>
+                    <td>cliente</td>
+                    <td>String (max 6)</td>
+                    <td>codigo do cliente</td>
+                </tr>
+				<tr>
+                    <td>produto</td>
+                    <td>String (max 15)</td>
+                    <td>codigo do produto</td>
+                </tr>
+				<tr>
+                    <td>codmunori</td>
+                    <td>String (max 7)</td>
+                    <td>codigo do municipio de origem</td>
+                </tr>
+				<tr>
+                    <td>codmundes</td>
+                    <td>String (max 7)</td>
+                    <td>codigo do municipio de destino</td>
+                </tr>
+				<tr>
+                    <td>ufori</td>
+                    <td>String (max 2)</td>
+                    <td>Estado de origem</td>
+                </tr>
+				<tr>
+                    <td>ufdes</td>
+                    <td>String (max 2)</td>
+                    <td>Estado de destino</td>
+                </tr>
+				<tr>
+                    <td>msgpedido</td>
+                    <td>String (max 254)</td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
     </div>
     <div class="content-code"></div>
