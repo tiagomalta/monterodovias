@@ -427,6 +427,7 @@ curl \
         "filial":"0101",
         "codigo":"000001",
         "loja":"01",
+        "produto": "RA000018",
         "valor":100,
         "vencimento":"20/11/2023",
         "natureza":"000000000",
@@ -450,6 +451,7 @@ Com sucesso:
         "filial": "0101",
         "codigo": "000001",
         "loja": "01",
+        "produto": "RA000018",
         "valor": 100,
         "numero": "000000008",
         "prefixo": "LEC",
@@ -467,6 +469,7 @@ Sem sucesso:
         "filial": "",
         "codigo": "",
         "loja": "",
+        "produto": "",
         "valor": 0,
         "numero": "",
         "prefixo": "",
@@ -499,6 +502,11 @@ Sem sucesso:
                     <td>loja</td>
                     <td>String (max 2)</td>
                     <td>loja do cliente</td>
+                </tr>
+				<tr>
+                    <td>produto</td>
+                    <td>String (max 15)</td>
+                    <td>codigo do produto</td>
                 </tr>
                 <tr>
                     <td>valor</td>
